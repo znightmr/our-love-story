@@ -28,6 +28,44 @@ body{
     line-height:1.7;
     -webkit-font-smoothing:antialiased;
 }
+/* Thai text uses a Thai-aware face while keeping Inter for latin */
+body.lang-th{
+    font-family:'Inter','Noto Sans Thai', sans-serif;
+}
+body.lang-th h1,
+body.lang-th h2,
+body.lang-th h3,
+body.lang-th #typing,
+body.lang-th .signature,
+body.lang-th #reasonText{
+    font-family:'Cormorant Garamond','Noto Sans Thai', serif;
+}
+
+/* ---------- Language toggle ---------- */
+.lang-toggle{
+    position:fixed; top:20px; right:20px;
+    z-index:10000;
+    display:inline-flex;
+    background:rgba(255,253,251,.7);
+    backdrop-filter:blur(8px);
+    border:1px solid var(--line);
+    border-radius:50px;
+    padding:4px;
+    box-shadow:0 10px 26px rgba(120,85,60,.14);
+}
+.lang-toggle button{
+    border:none; background:transparent; cursor:pointer;
+    font-family:'Inter','Noto Sans Thai',sans-serif;
+    font-size:13px; font-weight:500; letter-spacing:.5px;
+    color:var(--ink-soft);
+    padding:7px 16px; border-radius:50px;
+    transition:.3s ease;
+}
+.lang-toggle button:hover{ color:var(--accent-dk); }
+.lang-toggle button.active{
+    background:var(--accent); color:#fff;
+    box-shadow:0 6px 16px rgba(192,127,110,.32);
+}
 
 h1,h2,h3{
     font-family:'Cormorant Garamond', serif;
